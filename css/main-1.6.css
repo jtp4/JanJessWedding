@@ -182,6 +182,11 @@ body {
     font-size: 1em;
 }
 
+div.weddinginfo {
+    position: relative;
+    display: inline-block;
+}
+
 /* ==============
     MOBILE: Menu
    ============== */
@@ -258,10 +263,10 @@ body {
 
 #bg-image {
     position: fixed;
-    top: -50%;
+    top: 0%;
     left: -50%;
     width: 200%;
-    height: 200%;
+    height: 125%;
 }
 #bg-image img {
     position: absolute;
