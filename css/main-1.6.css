@@ -259,15 +259,20 @@ body {
     color: #fff;
     text-align: center;
 
+    background: url("img/JanJessHandHolding.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
-#bg-image {
+
+/*#bg-image {
     position: fixed;
     top: 0%;
-    left: -50%;
-    width: 200%;
-    height: 125%;
-}
+    left: 0%;
+    width: 0%;
+    height: 0%;
+}*/
 #bg-image img {
     position: absolute;
     top: 0;
@@ -821,10 +826,22 @@ section h2 {
     border-radius: 8px;
 }
 
-img.theinn  {
+img.reception {
+  top: 0%;
+  width: 90%;
+  height: 90%;
+}
 
+img.hotel  {
     text-align: center;
-    margin-bottom: 50px;
+    width: 100%;
+    height: 1%;
+}
+
+img.engagement  {
+    text-align: center;
+    width: 100%;
+    height: 100%;
 }
 
 div.bp h2 {
@@ -873,5 +890,5 @@ a.email {
     -o-border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
-    border-radius: 2px;
+    border-radius: 50%;
 }
