@@ -12,6 +12,8 @@
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
 
+        <!-- Add boostrap for creating responsive images easily -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
         <!-- For iPhone 4 with high-resolution Retina display: -->
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
@@ -22,9 +24,15 @@
 
         <link rel="stylesheet" href="css/normalize.min.css">
         <link rel="stylesheet" href="css/main-1.6.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+        <style>
+          .scrolloff {
+              pointer-events: none;
+          }
+        </style>
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -76,7 +84,7 @@
                             <h2>Jess</h2>
                             <p>
                                 <img src="css/img/jessica_baby.jpg" class="thumb" alt="Jess" />
-                                Jessica Naquin is the prettiest girl in the World.  </p>
+                                Jessica Naquin was born in Richmond, VA to two amazing parents, David and Judy.  She grew up in Chesterfield, VA with two super cool older sisters (Jennifer and Stephanie) and the best twin sister (Kimberly). She attended James Madison University where she joined a professional business fraternity (Alpha Kappa Psi), made tons of life-long friends, and earned a BBA in accounting. After college she moved to Northern Virginia, started to work for the DoD, and adopted the most wonderful dog in the whole world named Brady. Four years later she finally met her best friend, the funniest, most handsome, and all-around most amazing man aka Jan tenPas IV.</p>
 
                         </div><!--end column-->
                         <div class="column right">
@@ -218,13 +226,13 @@
 
                             <h2>HOTELS</h2>
                             <p>
-                                Omni Richmond Hotel <br />
+                                <a href="http://www.omnihotels.com/hotels/richmond/meetings/naquin-tenpas-wedding">Omni Richmond Hotel</a> <br />
                                 100 S 12th Street <br />
                                 Richmond, VA 23219 <br />
                                 <a href="tel:1-804-344-7000">(804) 344-7000</a> <br />
                                 $165 (Mention the tenPas/Naquin Wedding) <br />
                                 - <br />
-                                Courtyard Richmond Downtown <br />
+                                <a href="http://www.marriott.com/hotels/travel/ricrl-courtyard-richmond-downtown/">Courtyard Richmond Downtown</a> <br />
                                 1320 E Cary Street <br />
                                 Richmond, VA 23219 <br />
                                 <a href="tel:1-804-754-0007">(804) 754-0007</a> <br />
@@ -270,10 +278,11 @@
 
                         <div class="column full">
 
-                            <p>Due to the nature of city life (not a great deal of storage space), we have decided to embrace the HONEYMOON REGISTRY site.  However, if your prefer the traditional route, we are registered at Williams Sonoma, Sur La Table, &amp; Macy's.  A link for the registry sites will be coming soon!</p>
+                            <p>We are registered at <a href="http://www.macys.com/registry/wedding/guest/?registryId=6508713&PartnerID=WEDDINGCHANNEL&cm_mmc=WEDDINGCHANNEL-_-Registry-_-n-_-Registry&LinkshareID=266876073&ref=wc">Macy's</a>.</p>
+                            <p> Help Jan and Jess with their new home by making a donation to their <u>TO BE SETUP</u></p>
+                            <p> Make Jan and Jess' honeymoon special by donating to <u>TO BE SETUP</u></p>
                             <p>
-                            LOVE NOTES FOR SARAH &amp; BRADLEY <br />
-                            Email us at ... <br />
+                            E-mail Jess &amp; Jan your thoughts and wishes at <a href="mailto:jnack14@gmail.com">jnack14@gmail.com</a><br />
                             </p>
 
                         </div><!--end column-->
@@ -292,6 +301,22 @@
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-XXXXXXX-XX']);
           _gaq.push(['_trackPageview']);
+
+          $(document).ready(function () {
+
+              // you want to enable the pointer events only on click;
+
+              $('#gmap').addClass('scrolloff'); // set the pointer events to none on doc ready
+              $('#accomodations').on('click', function () {
+                  $('#gmap').removeClass('scrolloff'); // set the pointer events true on click
+              });
+
+              // you want to disable pointer events when the mouse leave the canvas area;
+
+              $("#gmap").mouseleave(function () {
+                  $('#gmap').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+              });
+          });
 
           (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

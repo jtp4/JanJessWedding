@@ -30,8 +30,8 @@ body {
     text-shadow: none;
 }
 a {
-    color: #b1bf92;
-    text-decoration: none;
+    color: #ffffff;
+    text-decoration: underline;
 }
 hr {
     display: block;
@@ -89,7 +89,7 @@ body {
 }
 
 #gmap iframe {
-    width: 75%;
+    width: 85%;
     height: 100px;
 
     border: 10px solid #090909;
@@ -263,16 +263,25 @@ body {
     color: #fff;
     text-align: center;
 
-    background: url("img/JanJessHandHolding.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+    /* Location of the image */
+    background-image: url("img/JanJessHandHolding.jpg");
 
+    /* Image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Image doesn't repeat */
+    background-repeat: no-repeat;
+
+    /* Makes the image fixed in the viewport so that it doesn't move when
+       the content height is greater than the image height */
+    background-attachment: fixed;
+
+    /* This is what makes the background image rescale based on its container's size */
+    background-size: cover;
+
+    /* Pick a solid background color that will be displayed while the background image is loading */
+    background-color:##F8F8FF;
+}
 
 /*#bg-image {
     position: fixed;
@@ -347,6 +356,28 @@ section h2 {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+
+ @media only screen and (max-width : 479px) {
+   body {
+     /* The file size of this background image is 93% smaller
+      * to improve page load speed on mobile internet connections */
+     background-image: url("img/JanJessHandHolding_Small.jpg") no-repeat;
+
+     /* Image is centered vertically and horizontally at all times */
+     background-position: top center;
+
+     /* Image doesn't repeat */
+     background-repeat: no-repeat;
+
+     /* Makes the image fixed in the viewport so that it doesn't move when
+        the content height is greater than the image height */
+     background-attachment: scroll;
+
+     /* This is what makes the background image rescale based on its container's size */
+     background-size: contain;
+   }
+ }
+
 
 @media only screen and (min-width: 480px) {
 
@@ -435,7 +466,7 @@ section h2 {
     .main header {
         margin-top: 10%;
         float: left;
-        width: 40%;
+        width: 100%;
         min-width: 320px;
     }
 
